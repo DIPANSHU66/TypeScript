@@ -269,7 +269,7 @@
    //       }
    // }
 
-   // let   user:greet1;
+   // let user:greet1;
    // user=new person("patel");
    // user.name="dip";
    
@@ -297,6 +297,143 @@
    // }
 
 
+   ///   TYPE GUARDs
+
+
+   
+   //
+//      type admin={
+//       name:string;
+//       privilage:string[]}
+
+//     type Employee={
+//       name:string;
+//       startdate:Date; }
+
+//       type elevatedemployee=admin & Employee;
+
+//       type unkownemployee=Employee |admin;
+
+
+//        const emp1:elevatedemployee ={
+//              name:"mern",
+//              privilage:[],
+//              startdate:new Date(),}
+
+
+// function printemployeeinformation(emp:unkownemployee){
+//    console.log(emp.name);
+// // start adding type guard
+// if('privillage'   in emp){
+//    console.log(emp.privillage);
+// }
+
+// if("startdate"in  emp){console.log(emp.startdate);}
+// }
+
+
+// printemployeeinformation(emp1);
+
+
+// class car{
+//    drive(){
+//       console.log('driving');
+//    }
+// }
+
+
+// class truck{
+//    drive (){
+//       console.log('driving a  truck');
+//    }
+
+//    loadcargo(amount:number){
+//       console.log('loading cargo...',amount);
+// }
+// }
+
+// type vehicle =car   |  truck;
+
+// const v1 =new car();
+// const v2=new truck();
+// function  usevechile(vehicle:vehicle){
+
+//    vehicle.drive();
+
+//   if('loadcargo' in vehicle){vehicle.loadcargo(19)};
+//   if(vehicle instanceof truck){}
+// }
+
+// type  casting  /type assertion
+
+// <HTMLInputElement>   or as HTMLInputElement;
+
+///   defer used for first render   upper part  of head    of render   first body
+
+
+
+
+///   learn Gnerics
+// type person={
+//    name:string;
+//    age:number;
+// }
+
+// const boy:person={
+//    name:"shiva",
+//       age:18
+// }
+// const fruits:Array<person>=[{name:"vivek",age:12}];
+
+// function merge<T,U,s>(obja:T,objb:U,obj3:s){
+//    return   {...obja,...objb,...obj3};
+// }
+// const result=merge({name:"sh"},{role:"sfteng"},{id:"d1"});
+// console.log(result);
+
+// function createobject<T extends string ,U extends number>(
+//    key:T,
+//    value:U
+// ):{key:T,value:U}{
+  
+//    return {key,value};
+// }
+
+// Generic  interface
+
+// interface   box<T>{
+//    value:T
+// }
+// const numberbox:box<number>={value:21}
+
+
+// genric   default
+// interface   user<T=string> {}
+
+// generic  with  class
+
+// class container<t>{
+//    private name:t;
+//    constructor(name:t) {this.name=name}
+//    get():t{return  this.name;}
+// }
+
+
+// generic  with  array
+// function getfirst<t>(arr:t[]){
+//    return arr[0];
+// }
+
+// generic with   keyoff
+
+// const person={name:"patel"}
+// function getproperty(onj:object,key:string){
+// return   
+// }
+
+// function send<T extends object,k extends keyof T>(obj: T, key: k):T[k]{
+//    return obj[key];
+// }
 
 
 

@@ -127,36 +127,113 @@
 // accdep.addreports("bugs");
 // accdep.name="don";
 // console.log(accdep);
-// class department3 {
-//     constructor(id, n) {
-//         this.employees = [];
-//         this.id = id;
-//         this.nam = n;
-//     }
+//    abstract class department3{
+//    nam: string;
+//    protected employees:string[]=[];
+//    protected readonly id:string;
+//    constructor(id:string, n:string){
+//       this.id=id;
+//       this.nam=n;
+//    }
+//    abstract describe(this:department3):void;
+//     abstract   displayname():void;
 // }
-// class subclass extends department3 {
-//     constructor(id, reports) {
-//         super(id, "Accounting");
-//         this.reports = reports;
-//     }
-//     describe() {
-//         console.log("Department", this.id);
-//     }
-//     displayname() {
-//         console.log(this.nam);
-//     }
+//    class subclass extends department3{
+//    constructor(id:string, private reports :string[]){
+//        super(id,"Accounting");}
+//    describe():void{
+//       console.log("Department",this.id)
+//    }
+//    displayname():void{
+//       console.log(this.nam)
 // }
-// const suclass = new subclass("d1", []);
+// }
+// const suclass =new subclass("d1",[]);
 // suclass.describe();
-
-
-
-=
-
-
-
-
-
-
-
-
+//  interface 
+// type a=number|string;
+// interface person{
+//    name:String;
+//    age:Number;
+//    greet(text:String):void
+// }
+// class  person2{
+//    name:string="patel";
+// }
+// let user:person;
+// user={
+//    name:"patel",
+//    age:21,
+//    greet(text){console.log(text);}
+// }
+//  interface greet2{
+//    readonly name:string;}
+// class person implements greet1{
+//       name:string;
+//       constructor(n:string){
+//          this.name=n;
+//       }
+// }
+// let user:greet1;
+// user=new person("patel");
+// user.name="dip";
+// interface greet1{
+// readonly name:string;}
+//  interface greetable extends   greet1{
+//   n:number;}
+//  type addfun=(a:number,b:number)=>number;
+//  interface  addfunction {
+//    (a:number,b:number):number;
+//  }
+//  let add:addfun;
+//  add=(n1,n2)=>{return n1+n2};
+//optionl(?)
+// interface named{
+//    readonly name:string;
+//    outputname?:string;
+// }
+///   TYPE GUARDs
+//
+//      type admin={
+//       name:string;
+//       privilage:string[]}
+//     type Employee={
+//       name:string;
+//       startdate:Date; }
+//       type elevatedemployee=admin & Employee;
+//       type unkownemployee=Employee |admin;
+//        const emp1:elevatedemployee ={
+//              name:"mern",
+//              privilage:[],
+//              startdate:new Date(),}
+// function printemployeeinformation(emp:unkownemployee){
+//    console.log(emp.name);
+// // start adding type guard
+// if('privillage'   in emp){
+//    console.log(emp.privillage);
+// }
+// if("startdate"in  emp){console.log(emp.startdate);}
+// }
+// printemployeeinformation(emp1);
+class car {
+    drive() {
+        console.log('driving');
+    }
+}
+class truck {
+    drive() {
+        console.log('driving a  truck');
+    }
+    loadcargo(amount) {
+        console.log('loading cargo...', amount);
+    }
+}
+const v1 = new car();
+const v2 = new truck();
+function usevechile(vehicle) {
+    vehicle.drive();
+    if ('lordcargo' in vehicle) {
+        vehicle.loadcargo(19);
+    }
+    ;
+}
